@@ -1,5 +1,18 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  spree:
+
+    secondary_carousel: 'Secondary Carousel'
+    secondary_carousels: 'Secondary Carousels'
+    new_secondary_carousel: 'New Secondary Carousel'
+    editing_secondary_carousel: 'Editing Secondary Carousel'
+    page_url: 'Page URL'
+    active: 'Active'
+
+    secondary_carousel_item: 'Secondary Carousel Item'
+    secondary_carousel_items: 'Secondary Carousel Items'
+    new_secondary_carousel_item: 'New Secondary Carousel Item'
+    editing_secondary_carousel_item: 'Editing Secondary Carousel Item'
+    link: 'Link'
+    name: 'Name'
+    title: 'Title'
+    label: 'Label'

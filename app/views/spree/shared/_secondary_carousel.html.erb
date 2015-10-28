@@ -1,0 +1,138 @@
+<div class="row">
+  <div class="col-lg-12 owl-outer collections">
+
+    <h3> Latest Collections </h3>
+
+    <div class="hidden-xs">
+      <img class="left-arrow" src="../images/more-next-light.png" width="30px">
+    </div>
+
+    <div class="hero-collections owl-carousel" id="owl-home-hero">
+
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+          </a>
+          <a>
+            <div class="title">
+              <span>Glazed by Jeff Andrews</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+          </a>
+          <a>
+            <div class="title">
+              <span>Glazed by Jeff Andrews</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+          </a>
+          <a>
+            <div class="title">
+              <span>Glazed by Jeff Andrews</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+            <a>
+              <div class="title">
+                <span>Glazed by Jeff Andrews</span>
+              </div>
+            </a>
+          </a>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+          </a>
+          <a>
+            <div class="title">
+              <span>Glazed by Jeff Andrews</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+          </a>
+          <a>
+            <div class="title">
+              <span>Glazed by Jeff Andrews</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+          </a>
+          <a>
+            <div class="title">
+              <span>Glazed by Jeff Andrews</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-img">
+          <a href="">
+            <img src="images/glazed_collection.jpg">
+          </a>
+          <a>
+            <div class="title">
+              <span>Glazed by Jeff Andrews</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- End Collections Slider -->
+
+    <div class="hidden-xs">
+      <img class="right-arrow" src="../images/more-next-light.png" width="30px">
+    </div>
+
+  </div>
+</div> <!-- End of Row -->
+
+<script type="text/javascript">
+    $('.hero-collections').owlCarousel({
+        itemsTablet : [768,3],
+        itemsMobile : [479,2],
+        itemsDesktop : [1200,5],
+        itemsDesktopSmall : [988,4],
+        items : 6
+    });
+
+    $('.right-arrow').click(function(){
+        $('.hero-collections').trigger('owl.next');
+    });
+
+    $('.left-arrow').click(function(){
+        $('.hero-collections').trigger('owl.prev');
+    });
+
+    $('.hero-collections .owl-pagination').addClass('visible-xs');
+    $('.hero-collections .owl-theme.owl-controls').addClass('visible-xs');
+</script>
