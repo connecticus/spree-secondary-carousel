@@ -1,7 +1,7 @@
-SpreeSecondaryCarousel
+Spree Secondary Carousel
 ======================
 
-Introduction goes here.
+Owl carousel with an image, label, and hyperlink for each position.
 
 Installation
 ------------
@@ -36,4 +36,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_secondary_carousel/factories'
 ```
 
-Copyright (c) 2015 [name of extension creator], released under the New BSD License
+Copyright (c) 2015 Astek Wallcovering, Inc., released under the New BSD License

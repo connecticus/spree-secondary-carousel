@@ -2,13 +2,13 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_secondary_carousel'
-  s.version     = '3.0.2'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.version     = '0.0.1'
+  s.summary     = 'Owl carousel with an image, label, and hyperlink for each position'
+  s.description = 'Owl carousel with an image, label, and hyperlink for each position'
   s.required_ruby_version = '>= 2.0.0'
 
-  # s.author    = 'You'
-  # s.email     = 'you@example.com'
+  s.author    = 'Edwin Horneij'
+  s.email     = 'edwin@astekwallcovering.com'
   # s.homepage  = 'http://www.spreecommerce.com'
 
   #s.files       = `git ls-files`.split("\n")
