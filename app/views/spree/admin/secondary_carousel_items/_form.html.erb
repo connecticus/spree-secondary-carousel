@@ -1,0 +1,30 @@
+<%= f.hidden_field :secondary_carousel_id, {:value => @secondary_carousel.id} %>
+
+<%= f.field_container :image, class: ['form-group'] do %>
+    <% unless @secondary_carousel_item.image_file_name.nil? %>
+        <div style="margin-bottom: 10px">
+          <%= image_tag @secondary_carousel_item.image.url(:standard), :style => 'width:100%' %>
+        </div>
+    <% end %>
+
+    <%= f.label :image, Spree.t(:image) %> <span class="required">*</span>
+    <%= f.file_field :image, :class => 'form-control', :required => @secondary_carousel_item.image_file_name.nil? %>
+    <%= f.error_message_on :image %>
+<% end %>
+
+<%= f.field_container :link, class: ['form-group'] do %>
+    <%= f.label :link, Spree.t(:link) %>
+    <%= f.text_field :link, :class => 'form-control', :required => true %>
+    <%= f.error_message_on :link %>
+<% end %>
+
+<%= f.field_container :label, class: ['form-group'] do %>
+    <%= f.label :label, Spree.t(:label) %> <span class="required">*</span>
+    <%= f.text_field :label, :class => 'form-control', :required => true %>
+    <%= f.error_message_on :label %>
+<% end %>
+
+<%= f.field_container :active, class: ['form-group'] do %>
+    <%= f.label :active, Spree.t(:active) %>
+    <%= f.check_box :active, :class => 'form-control' %>
+<% end %>

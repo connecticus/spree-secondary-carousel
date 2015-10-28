@@ -1,0 +1,42 @@
+<% content_for :page_title do %>
+    <%= Spree.t(:secondary_carousels) %>
+<% end %>
+
+<% content_for :page_actions do %>
+    <%= button_link_to Spree.t(:new_secondary_carousel), new_admin_secondary_carousel_url, { :class => "btn-success", :icon => 'add', :id => 'admin_new_secondary_carousel' } %>
+<% end if can?(:create, Spree::HeroCarousel) %>
+
+<% if @collection.any? %>
+    <table class="table" id="listing_secondary_carousels">
+      <thead>
+      <tr data-hook="admin_secondary_carousels_index_headers">
+        <th><%= t(:id) %></th>
+        <th><%= Spree.t(:name) %></th>
+        <th><%= Spree.t(:title) %></th>
+        <th><%= Spree.t(:page_url) %></th>
+        <th><%= Spree.t(:active) %></th>
+        <th data-hook="admin_secondary_carousels_index_header_actions" class="actions"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @collection.each do |secondary_carousel| %>
+          <tr id="<%= spree_dom_id secondary_carousel %>" data-hook="admin_secondary_carousels_index_rows" class="<%= cycle('odd', 'even') %>">
+            <td class="id"><%= secondary_carousel.id %></td>
+            <td class="name"><%= secondary_carousel.name %></td>
+            <td class="title"><%= secondary_carousel.title %></td>
+            <td class="page_url"><%= secondary_carousel.page_url %></td>
+            <td><% if secondary_carousel.active? %><span style="color: green;">✔</span><% else %><span style="color: red;">✘</span><% end %></td>
+            <td class="actions actions-2 text-right">
+              <%= link_to_edit(secondary_carousel, :no_text => true) %>
+              <%= link_to_delete(secondary_carousel, :no_text => true) %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <div class="alert alert-info no-objects-found">
+      <%= Spree.t(:no_resource_found, resource: Spree.t(:secondary_carousels)) %>.
+      <%= link_to Spree.t(:add_one), new_object_url %>!
+    </div>
+<% end %>

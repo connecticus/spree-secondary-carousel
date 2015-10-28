@@ -1,112 +1,25 @@
 <div class="row">
   <div class="col-lg-12 owl-outer collections">
 
-    <h3> Latest Collections </h3>
+    <h3><%= @secondary_carousel.title %></h3>
 
     <div class="hidden-xs">
       <img class="left-arrow" src="../images/more-next-light.png" width="30px">
     </div>
 
     <div class="hero-collections owl-carousel" id="owl-home-hero">
+        <% @secondary_carousel.secondary_carousel_items.each do |item| %>
 
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-          </a>
-          <a>
-            <div class="title">
-              <span>Glazed by Jeff Andrews</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-          </a>
-          <a>
-            <div class="title">
-              <span>Glazed by Jeff Andrews</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-          </a>
-          <a>
-            <div class="title">
-              <span>Glazed by Jeff Andrews</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-            <a>
+          <div class="slide-item">
+            <div class="slide-img">
+              <a href="<%= item.link %>"><%= image_tag item.image.url(:standard) %></a>
               <div class="title">
-                <span>Glazed by Jeff Andrews</span>
+                  <span><a href="<%= item.link %>"><%= item.label %></a></span>
               </div>
-            </a>
-          </a>
-        </div>
-      </div>
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-          </a>
-          <a>
-            <div class="title">
-              <span>Glazed by Jeff Andrews</span>
             </div>
-          </a>
-        </div>
-      </div>
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-          </a>
-          <a>
-            <div class="title">
-              <span>Glazed by Jeff Andrews</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-          </a>
-          <a>
-            <div class="title">
-              <span>Glazed by Jeff Andrews</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="slide-item">
-        <div class="slide-img">
-          <a href="">
-            <img src="images/glazed_collection.jpg">
-          </a>
-          <a>
-            <div class="title">
-              <span>Glazed by Jeff Andrews</span>
-            </div>
-          </a>
-        </div>
-      </div>
+          </div>
 
+        <% end %>
     </div> <!-- End Collections Slider -->
 
     <div class="hidden-xs">

@@ -1,0 +1,59 @@
+<%= render partial: 'spree/admin/shared/secondary_carousel_tabs', locals: {current: :secondary_carousel_items} %>
+
+<% content_for :page_actions do %>
+    <%= button_link_to(Spree.t(:new_secondary_carousel_item), spree.new_admin_secondary_carousel_secondary_carousel_item_url(@secondary_carousel), { class: "btn-success", icon: 'add', id: 'new_secondary_carousel_item_link' }) if can? :create, Spree::HeroCarouselItem %>
+<% end %>
+
+<h2 style="font-size: 20px;"><%= Spree.t(:secondary_carousel_items) %></h2>
+
+<% unless @secondary_carousel.secondary_carousel_items.any? %>
+    <div class="alert alert-warning no-objects-found">
+      <%= Spree.t(:no_resource_found, resource: Spree.t(:secondary_carousel_items)) %>.
+    </div>
+<% else %>
+    <style type="text/css">
+      td.image img {
+          height: 40px;
+      }
+    </style>
+
+    <table class="table sortable" data-hook="secondary_carousel_items_table" data-sortable-link="<%= update_positions_admin_secondary_carousel_secondary_carousel_items_url(@secondary_carousel) %>">
+        <thead>
+            <tr data-hook="secondary_carousel_items_header">
+                <th class="move-handle"></th>
+                <th class="image"><%= Spree.t(:image) %></th>
+                <th class="link"><%= Spree.t(:link) %></th>
+                <th><%= Spree.t(:label) %></th>
+                <th><%= Spree.t(:active) %></th>
+                <th class="actions"></th>
+            </tr>
+        </thead>
+
+      <tbody>
+      <% @secondary_carousel.secondary_carousel_items.each do |item| %>
+          <tr id="<%= spree_dom_id item %>" data-hook="secondary_carousel_items_row">
+            <td class="move-handle text-center">
+              <% if can? :edit, item %>
+                  <span class="icon icon-move handle"></span>
+              <% end %>
+            </td>
+
+            <td class="image">
+              <%= image_tag item.image.url(:standard) %>
+            </td>
+
+            <td class="link"><%= item.link %></td>
+
+            <td><%= item.label %></td>
+
+            <td><% if item.active? %><span style="color: green;">✔</span><% else %><span style="color: red;">✘</span><% end %></td>
+
+            <td class="actions actions-2 text-right">
+              <%= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_secondary_carousel_secondary_carousel_item_url(@secondary_carousel, item), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, item %>
+              <%= link_to_delete(item, { url: spree.admin_secondary_carousel_secondary_carousel_item_url(@secondary_carousel, item), no_text: true }) if can? :destroy, item %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>

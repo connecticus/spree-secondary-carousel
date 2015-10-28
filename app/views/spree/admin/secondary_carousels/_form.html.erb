@@ -1,0 +1,33 @@
+<div data-hook="admin_secondary_carousel_form" class="row">
+  <div class="col-md-3">
+    <%= f.field_container :name, class: ['form-group'] do %>
+        <%= f.label :name, Spree.t(:name) %> <span class="required">*</span>
+        <%= f.text_field :name, :class => 'form-control', :required => true %>
+        <%= f.error_message_on :name %>
+    <% end %>
+  </div>
+
+  <div class="col-md-3">
+    <%= f.field_container :title, class: ['form-group'] do %>
+        <%= f.label :title, Spree.t(:title) %> <span class="required">*</span>
+        <%= f.text_field :title, :class => 'form-control', :required => true %>
+        <%= f.error_message_on :title %>
+    <% end %>
+  </div>
+
+  <div class="col-md-4">
+    <%= f.field_container :page_url, class: ['form-group'] do %>
+        <%= f.label :page_url, Spree.t(:page_url) %> <span class="required">*</span>
+        <%= f.text_field :page_url, :class => 'form-control', :required => true %>
+        <%= f.error_message_on :page_url %>
+    <% end %>
+  </div>
+
+  <div class="col-md-2">
+    <%= f.field_container :active, class: ['form-group'] do %>
+        <%= f.label :active, Spree.t(:active) %> <span class="required">*</span>
+        <%= f.check_box :active, :class => 'form-control' %>
+        <%= f.error_message_on :active %>
+    <% end %>
+  </div>
+</div>
