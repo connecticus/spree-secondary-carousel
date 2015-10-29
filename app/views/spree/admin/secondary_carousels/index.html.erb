@@ -4,7 +4,7 @@
 
 <% content_for :page_actions do %>
     <%= button_link_to Spree.t(:new_secondary_carousel), new_admin_secondary_carousel_url, { :class => "btn-success", :icon => 'add', :id => 'admin_new_secondary_carousel' } %>
-<% end if can?(:create, Spree::HeroCarousel) %>
+<% end if can?(:create, Spree::SecondaryCarousel) %>
 
 <% if @collection.any? %>
     <table class="table" id="listing_secondary_carousels">
@@ -25,7 +25,7 @@
             <td class="name"><%= secondary_carousel.name %></td>
             <td class="title"><%= secondary_carousel.title %></td>
             <td class="page_url"><%= secondary_carousel.page_url %></td>
-            <td><% if secondary_carousel.active? %><span style="color: green;">✔</span><% else %><span style="color: red;">✘</span><% end %></td>
+            <td class="status"><% if secondary_carousel.active? %><span style="color: green;">✔</span><% else %><span style="color: red;">✘</span><% end %></td>
             <td class="actions actions-2 text-right">
               <%= link_to_edit(secondary_carousel, :no_text => true) %>
               <%= link_to_delete(secondary_carousel, :no_text => true) %>
