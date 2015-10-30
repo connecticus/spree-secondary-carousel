@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_secondary_carousel'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.summary     = 'Owl carousel with an image, label, and hyperlink for each position'
   s.description = 'Owl carousel with an image, label, and hyperlink for each position'
   s.required_ruby_version = '>= 2.0.0'
