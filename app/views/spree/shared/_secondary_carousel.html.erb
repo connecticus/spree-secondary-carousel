@@ -1,51 +1,53 @@
-<div class="row">
-  <div class="col-lg-12 owl-outer collections">
+<% unless @secondary_carousel.nil? %>
+    <div class="row">
+      <div class="col-lg-12 owl-outer collections">
 
-    <h3><%= @secondary_carousel.title %></h3>
+        <h3><%= @secondary_carousel.title %></h3>
 
-    <div class="hidden-xs">
-      <img class="left-arrow" src="../images/more-next-light.png" width="30px">
-    </div>
+        <div class="hidden-xs">
+          <img class="left-arrow" src="../images/more-next-light.png" width="30px">
+        </div>
 
-    <div class="hero-collections owl-carousel" id="owl-home-hero">
-        <% @secondary_carousel.secondary_carousel_items.each do |item| %>
+        <div class="hero-collections owl-carousel" id="owl-home-hero">
+            <% @secondary_carousel.secondary_carousel_items.each do |item| %>
 
-          <div class="slide-item">
-            <div class="slide-img">
-              <a href="<%= item.link %>"><%= image_tag item.image.url(:standard) %></a>
-              <div class="title">
-                  <span><a href="<%= item.link %>"><%= item.label %></a></span>
+              <div class="slide-item">
+                <div class="slide-img">
+                  <a href="<%= item.link %>"><%= image_tag item.image.url(:standard) %></a>
+                  <div class="title">
+                      <span><a href="<%= item.link %>"><%= item.label %></a></span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-        <% end %>
-    </div> <!-- End Collections Slider -->
+            <% end %>
+        </div> <!-- End Collections Slider -->
 
-    <div class="hidden-xs">
-      <img class="right-arrow" src="../images/more-next-light.png" width="30px">
-    </div>
+        <div class="hidden-xs">
+          <img class="right-arrow" src="../images/more-next-light.png" width="30px">
+        </div>
 
-  </div>
-</div> <!-- End of Row -->
+      </div>
+    </div> <!-- End of Row -->
 
-<script type="text/javascript">
-    $('.hero-collections').owlCarousel({
-        itemsTablet : [768,3],
-        itemsMobile : [479,2],
-        itemsDesktop : [1200,5],
-        itemsDesktopSmall : [988,4],
-        items : 6
-    });
+    <script type="text/javascript">
+        $('.hero-collections').owlCarousel({
+            itemsTablet : [768,3],
+            itemsMobile : [479,2],
+            itemsDesktop : [1200,5],
+            itemsDesktopSmall : [988,4],
+            items : 6
+        });
 
-    $('.right-arrow').click(function(){
-        $('.hero-collections').trigger('owl.next');
-    });
+        $('.right-arrow').click(function(){
+            $('.hero-collections').trigger('owl.next');
+        });
 
-    $('.left-arrow').click(function(){
-        $('.hero-collections').trigger('owl.prev');
-    });
+        $('.left-arrow').click(function(){
+            $('.hero-collections').trigger('owl.prev');
+        });
 
-    $('.hero-collections .owl-pagination').addClass('visible-xs');
-    $('.hero-collections .owl-theme.owl-controls').addClass('visible-xs');
-</script>
+        $('.hero-collections .owl-pagination').addClass('visible-xs');
+        $('.hero-collections .owl-theme.owl-controls').addClass('visible-xs');
+    </script>
+<% end %>
