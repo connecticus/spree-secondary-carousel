@@ -10,25 +10,25 @@
 
         <div class="hero-collections owl-carousel" id="owl-home-hero">
             <% @secondary_carousel.secondary_carousel_items.each do |item| %>
-
-              <div class="slide-item">
-                <div class="slide-img">
-                  <a href="<%= item.link %>"><%= image_tag item.image.url(:standard) %></a>
-                  <div class="title">
-                      <span><a href="<%= item.link %>"><%= item.label %></a></span>
+              <% if item.active %>
+                <div class="slide-item">
+                  <div class="slide-img">
+                    <a href="<%= item.link %>"><%= image_tag item.image.url(:standard) %></a>
+                    <div class="title">
+                        <span><a href="<%= item.link %>"><%= item.label %></a></span>
+                    </div>
                   </div>
                 </div>
-              </div>
-
+              <% end %>
             <% end %>
-        </div> <!-- End Collections Slider -->
+        </div>
 
         <div class="hidden-xs">
           <img class="right-arrow" src="../images/more-next-light.png" width="30px">
         </div>
 
       </div>
-    </div> <!-- End of Row -->
+    </div>
 
     <script type="text/javascript">
         $('.hero-collections').owlCarousel({
