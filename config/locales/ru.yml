@@ -1,0 +1,20 @@
+ru:
+  spree:
+
+    secondary_carousel: 'Новый слайдер'
+    secondary_carousels: 'Новые слайдеры'
+    new_secondary_carousel: 'Добавить новый слайдер'
+    editing_secondary_carousel: 'Редактировать слайдер'
+    page_url: 'URL страницы'
+    active: 'активно'
+
+    secondary_carousel_item: 'Слайд'
+    secondary_carousel_items: 'Слайды'
+    new_secondary_carousel_item: 'Добавить новый слайд'
+    editing_secondary_carousel_item: 'Редактировать слайд'
+    link: 'Ссылка'
+    name: 'Имя'
+    title: 'Заголовок'
+    label: 'Подпись'
+    text: 'Текст'
+

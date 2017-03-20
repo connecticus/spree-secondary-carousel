@@ -30,4 +30,13 @@
         <%= f.error_message_on :active %>
     <% end %>
   </div>
+
+  <div class="col-md-10">
+    <%= f.field_container :text, class: ['form-group'] do %>
+        <%= f.label :text, Spree.t(:text) %>
+        <%= f.text_area :text, :class => 'form-control', :required => true %>
+        <%= f.error_message_on :text %>
+    <% end %>
+  </div>
+
 </div>

@@ -5,7 +5,7 @@ module Spree
       private
 
       def permitted_resource_params
-        params.require(:secondary_carousel).permit(:id, :name, :title, :page_url, :active)
+        params.require(:secondary_carousel).permit(:id, :name, :title, :page_url, :active, :text)
       end
 
     end

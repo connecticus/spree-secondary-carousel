@@ -13,12 +13,13 @@ module Spree
 
       def permitted_resource_params
         params.require(:secondary_carousel_item).
-            permit(:id, :secondary_carousel_id, :link, :label, :image, :position, :active)
+            permit(:id, :secondary_carousel_id, :link, :label, :image, :position, :active, :text, :width, :height)
       end
 
       def load_secondary_carousel
         @secondary_carousel = Spree::SecondaryCarousel.find(params[:secondary_carousel_id])
       end
+
 
     end
   end
